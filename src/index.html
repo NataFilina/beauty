@@ -1,21 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 10</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet">
-    </link>
-  </head>
-  <body>
-    <select class="breed-select" id="single"></select>
-    <p class="loader"></p>
-    <p class="error">Oops! Something went wrong! Try reloading the page!</p>
-    <div class="cat-info">
-      
-    </div>
+<html lang="ua">
 
-    <script src="index.js" type="module"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beauty</title>
+  <link rel="stylesheet" href="./css/modern-normalize.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal&family=Mulish&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <a href="#">
+      <img class="header_logo" src="../assets/logo.png" alt="logo">
+    </a>
+    <nav>
+      <ul class="header_nav">
+        <li class="header_nav_items"><a href="#about">Про нас</a></li>
+        <li class="header_nav_items"><a href="#services_section">Послуги</a></li>
+        <li class="header_nav_items"><a href="#masters">Майстри</a></li>
+        <li class="header_nav_items"><a href="#contacts">Контакти</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="btn btn_booking"><a href="#booking">Записатися</a></button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero_content_first">
+        <img class="hero_content_first_img" src="../assets/hero_1.png" alt="">
+        <div class="content hero_content_first_text">Розкрийте свою красу разом з нами — стиль, професіоналізм,
+          досконалість!
+        </div>
+        <button type="button" class="btn btn_booking"><a href="#booking">Записатися</a></button>
+      </div>
+      <div class="hero_content_second">
+        <div class="content hero_content_second_text">Місце, де ваш стиль і краса отримують нове життя. Довіртеся
+          професіоналам,
+          які знають, що вам потрібно!</div>
+        <div class="content hero_content_second_text">Розкрийте свою унікальну красу разом з нашими майстрами — стиль,
+          якість і
+          турбота в кожній деталі!</div>
+        <img class="hero_content_second_img" src="../assets/hero_2.png" alt="">
+      </div>
+      <img class="hero_content_third_img" src="../assets/hero_3.png" alt="">
+
+    </section>
+    <section id="about" class="about">
+      <h2 class="title">Про нас</h2>
+      <div class="about_container">
+        <div class="about_content">
+          <div class="content about_content_text">Ласкаво просимо до нашого салону краси — місця, де ваша краса і
+            доглянутість є нашим пріоритетом! Пропонуємо широкий
+            спектр послуг, щоб ви почувалися особливими.</div>
+          <div class="content about_content_text">Наші майстри — це команда професіоналів із багаторічним досвідом, які
+            постійно вдосконалюють свої навички та слідкують
+            за новітніми трендами в індустрії краси.</div>
+          <img class="about_content_img" src="../assets/about_1.png" alt="">
+        </div>
+        <div class="about_content">
+          <img class="about_content_img" src="../assets/about_2.png" alt="">
+          <div class="content about_content_text">Ми використовуємо лише найкращу професійну косметику та сучасні
+            техніки, щоб
+            гарантувати високий рівень послуг і безпеку
+            для кожного клієнта.</div>
+          <div class="content about_content_text">Ми прагнемо, щоб кожен ваш візит був незабутнім, і ви хотіли
+            повернутися знову
+            і знову. Довірте нам свою красу — і ми
+            надихнемо вас бути ще прекраснішими!</div>
+        </div>
+      </div>
+    </section>
+    <section id="booking" class="booking">
+      <h2 class="title">Запис</h2>
+      <div class="booking_container">
+        <div class="booking_container_btns">
+          <div class="booking_container_btns_top">
+            <button type="button" class="booking_btn btn_booking">Послуга <img src="../assets/arrow.png" width="20"
+                height="20" alt=""></button>
+            <button type="button" class="booking_btn btn_booking">Майстер <img src="../assets/arrow.png" width="20"
+                height="20" alt=""></button>
+          </div>
+          <button type="button" class="btn btn_booking"><a href="#booking">Записатися</a></button>
+        </div>
+
+        <div class="booking_calendar_container">
+          <button class="booking_calendar_prev-week" id="prev-week"><img src="../assets/prew.png" alt=""></button>
+          <table id="calendar-table"></table>
+          <button id="next-week"><img src="../assets/next.png" alt=""></button>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="services_section" class="services">
+      <h2 class="title">Послуги</h2>
+      <div class="services_container">
+        <img class="services_img" src="../assets/service_1.png" alt="">
+        <img class="services_img" src="../assets/service_2.png" alt="">
+        <img class="services_img" src="../assets/service_3.png" alt="">
+        <img class="services_img" src="../assets/service_4.png" alt="">
+      </div>
+    </section>
+    <section id="masters" class="masters">
+      <h2 class="title">Майстри</h2>
+      <div class="masters_container">
+        <div class="masters_card">
+          <img class="masters_card_img" src="../assets/master_1.png" alt="">
+          <div class="content masters_card_text">Аня — майстер манікюру та педикюру</div>
+          <div class="content masters_card_text">Анна спеціалізується на модних дизайнах, класичних техніках і завжди в
+            курсі
+            останніх трендів у nail-індустрії. З її
+            досвідом ваші нігті завжди будуть доглянутими і стильними.</div>
+        </div>
+        <div class="masters_card">
+          <img class="masters_card_img" src="../assets/master_2.png" alt="">
+          <div class="content masters_card_text">Ольга — бровист та lash-майстер</div>
+          <div class="content masters_card_text">Ольга допоможе знайти ідеальну форму брів, яка підкреслить риси вашого
+            обличчя,
+            а також зробить ваш погляд виразним
+            завдяки нарощенню та ламінуванню вій.</div>
+        </div>
+        <div class="masters_card">
+          <img class="masters_card_img" src="../assets/master_3.png" alt="">
+          <div class="content masters_card_text">Марія — візажист</div>
+          <div class="content masters_card_text">Марія володіє сучасними техніками макіяжу для будь-якої події:
+            повсякденного,
+            вечірнього чи весільного. Вона знайде
+            ідеальні відтінки для вашого обличчя та зробить образ завершеним.</div>
+        </div>
+      </div>
+    </section>
+    <section id="contacts" class="contacts">
+      <h2 class="title">Контакти</h2>
+      <div class="contacts_container">
+        <div class="contacts_container_content">
+          <ul class="contacts_list">
+            <li class="content contacts_item">Пошта: <a class="content"
+                href="mailto:beauti.salon@gmail.com:">beauti.salon@gmail.com</a></li>
+            <li class="content contacts_item">Номер телефону: <a class="content" href="tel:+380965366823">+ 380 96 536
+                68
+                23</a></li>
+            <li class="content contacts_item">Інстаграм: beauti.salon</li>
+            <li class="content contacts_item">Адресса: м.Одеса, вул. Зелена 76</li>
+          </ul>
+          <button type="button" class="btn btn_booking"><a href="#booking">Записатися</a></button>
+        </div>
+        <img src="../assets/contacts.png" alt="">
+      </div>
+    </section>
+  </main>
+  <!-- Модальне вікно -->
+
+  <div class="modal" id="modal">
+    <form id="booking-form">
+      <input type="text" id="name-input" placeholder="Ваше ім'я" required>
+      <input type="text" id="phone-input" placeholder="Ваш номер телефону" required>
+      <button type="submit">Підтвердити</button>
+    </form>
+  </div>
+
+  <div id="modal_btn" class="modal">
+    <div class="modal_content">
+      <span class="close-btn">&times;</span>
+      <h2 class="modal_content_title">Оберіть найкращі для вас послугу, дату та час на календарі</h2>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <a href="#">
+      <img class="footer_logo" src="../assets/logo.png" alt="logo">
+    </a>
+    <div class="footer_content">
+      <div class="footer_title">Меню</div>
+      <ul class="footer_content_list">
+        <li class="content footer_content_items"><a class="content" href="#about">Про нас</a></li>
+        <li class="content footer_content_items"><a class="content" href="#services_section">Послуги</a></li>
+        <li class="content footer_content_items"><a class="content" href="#masters">Майстри</a></li>
+        <li class="content footer_content_items"><a class="content" href="#contacts">Контакти</a></li>
+      </ul>
+    </div>
+    <div class="footer_content">
+      <div class="footer_title">Контакти</div>
+      <ul class="footer_content_list">
+        <li class="content footer_content_items"><a class="content"
+            href="mailto:beauti.salon@gmail.com:">beauti.salon@gmail.com</a></li>
+        <li class="content footer_content_items">Номер телефону: <a class="content" href="tel:+380965366823">+ 380 96
+            536
+            68
+            23</a></li>
+        <li class="content footer_content_items">Інстаграм: beauti.salon</li>
+        <li class="content footer_content_items">Адресса: м.Одеса, вул. Зелена 76</li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <script src="index.js" type="module"></script>
+</body>
+
 </html>
