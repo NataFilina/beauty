@@ -188,49 +188,49 @@ main > section {
   width: 595px;
   height: 320px;
   border-radius: 40px;
-  background-image: url(././assets/service_1.png);
+  background-image: url(../../assets/service_1.png);
   background-size: cover;
   background-position: center;
   transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 .services_img1:hover {
-  background-image: url(././assets/service_1_hover.png);
+  background-image: url(../../assets/service_1_hover.png);
 }
 .services_img2 {
   width: 595px;
   height: 320px;
   border-radius: 40px;
-  background-image: url(././assets/service_2.png);
+  background-image: url(../../assets/service_2.png);
   background-size: cover;
   background-position: center;
   transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 .services_img2:hover {
-  background-image: url(././assets/service_2_hover.png);
+  background-image: url(../../assets/service_2_hover.png);
 }
 .services_img3 {
   width: 595px;
   height: 320px;
   border-radius: 40px;
-  background-image: url(././assets/service_3.png);
+  background-image: url(../../assets/service_3.png);
   background-size: cover;
   background-position: center;
   transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 .services_img3:hover {
-  background-image: url(././assets/service_3_hover.png);
+  background-image: url(../../assets/service_3_hover.png);
 }
 .services_img4 {
   width: 595px;
   height: 320px;
   border-radius: 40px;
-  background-image: url(././assets/service_4.png);
+  background-image: url(../../assets/service_4.png);
   background-size: cover;
   background-position: center;
   transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 .services_img4:hover {
-  background-image: url(././assets/service_4_hover.png);
+  background-image: url(../../assets/service_4_hover.png);
 }
 .masters_container {
   display: flex;
@@ -356,17 +356,17 @@ main > section {
   font-size: 14px;
 }
 .booking_btn_arr_s {
-  background-image: url(././assets/arrow.png);
+  background-image: url(../../assets/arrow.png);
   width: 20px;
   height: 20px;
 }
 .booking_btn_arr_m {
-  background-image: url(././assets/arrow.png);
+  background-image: url(../../assets/arrow.png);
   width: 20px;
   height: 20px;
 }
 .booking_btn_arr_down {
-  background-image: url(././assets/arrow_down.png);
+  background-image: url(../../assets/arrow_down.png);
   width: 20px;
   height: 20px;
 }
