@@ -79,18 +79,18 @@
       <div class="booking_container">
         <div class="booking_container_btns">
           <div class="booking_container_btns_top">
-            <button type="button" class="booking_btn btn_booking">Послуга <img src="/assets/arrow.png" width="20"
-                height="20" alt=""></button>
-            <button type="button" class="booking_btn btn_booking">Майстер <img src="/assets/arrow.png" width="20"
-                height="20" alt=""></button>
+            <button type="button" id="booking_btn_services" class="booking_btn">Послуга <div class="booking_btn_arr_s">
+              </div></button>
+            <button type="button" id="booking_btn_masters" class="booking_btn ">Майстер <div class="booking_btn_arr_m">
+              </div></button>
           </div>
           <button type="button" class="btn btn_booking"><a href="#booking">Записатися</a></button>
         </div>
 
         <div class="booking_calendar_container">
-          <button class="booking_calendar_prev-week" id="prev-week"><img src="/assets/prew.png" alt=""></button>
+          <button class="booking_calendar_prev-week" id="prev-week"><img src="/assets/prew.svg" alt=""></button>
           <table id="calendar-table"></table>
-          <button id="next-week"><img src="/assets/next.png" alt=""></button>
+          <button id="next-week"><img src="/assets/next.svg" alt=""></button>
         </div>
       </div>
     </section>
@@ -100,10 +100,10 @@
     <section id="services_section" class="services">
       <h2 class="title">Послуги</h2>
       <div class="services_container">
-        <img class="services_img" src="/assets/service_1.png" alt="">
-        <img class="services_img" src="/assets/service_2.png" alt="">
-        <img class="services_img" src="/assets/service_3.png" alt="">
-        <img class="services_img" src="/assets/service_4.png" alt="">
+        <div class="services_img1"></div>
+        <div class="services_img2"></div>
+        <div class="services_img3"></div>
+        <div class="services_img4"></div>
       </div>
     </section>
     <section id="masters" class="masters">
@@ -164,10 +164,39 @@
     </form>
   </div>
 
+  <div id="modal_masters" class="modal">
+    <div class="modal_content">
+      <span class="close-btn">&times;</span>
+      <div class="modal_conteiner_masters">
+        <label for="modal_masters_select" class="modal_content_title">Оберіть майстра</label>
+
+        <select name="modal_masters_select" id="modal_masters_select">
+          <option class="modal_masters_option" value="manic">Всі майстри</option>
+          <option class="modal_masters_option" value="manic">Анна</option>
+          <option class="modal_masters_option" value="lash">Ольга</option>
+          <option class="modal_masters_option" value="make">Марія</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
   <div id="modal_btn" class="modal">
     <div class="modal_content">
       <span class="close-btn">&times;</span>
       <h2 class="modal_content_title">Оберіть найкращі для вас послугу, дату та час на календарі</h2>
+    </div>
+  </div>
+
+  <div id="modal_price" class="modal">
+    <div class="modal_content">
+      <span class="close-btn">&times;</span>
+      <div class="booking_container_price">
+        <div class="price_item">Манікюр <span class="price_item_desc">(від 500 грн до 1000грн)</span></div>
+        <div class="price_item">Педикюр <span class="price_item_desc">(від 500 грн до 1000грн)</span></div>
+        <div class="price_item">Брови <span class="price_item_desc">(від 500 грн до 1000грн)</span></div>
+        <div class="price_item">Вії <span class="price_item_desc">(від 500 грн до 1000грн)</span></div>
+        <div class="price_item">Макіяж <span class="price_item_desc">(від 500 грн до 1000грн)</span></div>
+      </div>
     </div>
   </div>
 

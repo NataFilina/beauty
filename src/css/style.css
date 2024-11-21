@@ -65,10 +65,25 @@ main > section {
   line-height: 19.26px;
 }
 .btn:hover {
-  border: 3px solid rgb(174, 41, 72);
+  animation: changeColor 0.7s ease forwards;
 }
 .btn a:hover {
-  color: rgb(174, 41, 72);
+  animation: changeColor 0.7s ease forwards;
+}
+@keyframes changeColor {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(164, 72, 93, 1);
+    border: none;
+    color: #fff;
+  }
+  100% {
+    background-color: rgba(28, 15, 8, 1);
+    border: none;
+    color: #fff;
+  }
 }
 .content {
   font-size: 18px;
@@ -169,10 +184,53 @@ main > section {
   flex-wrap: wrap;
   gap: 50px;
 }
-.services_img {
+.services_img1 {
   width: 595px;
   height: 320px;
   border-radius: 40px;
+  background-image: url(././assets/service_1.png);
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+.services_img1:hover {
+  background-image: url(././assets/service_1_hover.png);
+}
+.services_img2 {
+  width: 595px;
+  height: 320px;
+  border-radius: 40px;
+  background-image: url(././assets/service_2.png);
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+.services_img2:hover {
+  background-image: url(././assets/service_2_hover.png);
+}
+.services_img3 {
+  width: 595px;
+  height: 320px;
+  border-radius: 40px;
+  background-image: url(././assets/service_3.png);
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+.services_img3:hover {
+  background-image: url(././assets/service_3_hover.png);
+}
+.services_img4 {
+  width: 595px;
+  height: 320px;
+  border-radius: 40px;
+  background-image: url(././assets/service_4.png);
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+.services_img4:hover {
+  background-image: url(././assets/service_4_hover.png);
 }
 .masters_container {
   display: flex;
@@ -273,7 +331,45 @@ main > section {
 .booking_btn:hover {
   background-color: rgb(174, 41, 72);
 }
-
+.booking_container_price {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.price_item {
+  width: 198px;
+  height: 47px;
+  border-radius: 30px;
+  border: 3px solid rgba(164, 72, 93, 1);
+  background-color: transparent;
+  color: rgba(28, 15, 8, 1);
+  font-size: 20px;
+  line-height: 19.26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.price_item_desc {
+  font-size: 14px;
+}
+.booking_btn_arr_s {
+  background-image: url(././assets/arrow.png);
+  width: 20px;
+  height: 20px;
+}
+.booking_btn_arr_m {
+  background-image: url(././assets/arrow.png);
+  width: 20px;
+  height: 20px;
+}
+.booking_btn_arr_down {
+  background-image: url(././assets/arrow_down.png);
+  width: 20px;
+  height: 20px;
+}
 .modal.active {
   display: flex;
   flex-direction: column;
@@ -304,25 +400,29 @@ main > section {
   position: absolute;
   top: 50%;
   left: -75px;
-  border-radius: 30px;
-  border: 3px solid rgba(164, 72, 93, 1);
   background-color: transparent;
-  color: rgba(164, 72, 93, 1);
   cursor: pointer;
   width: 62px;
   height: 42px;
+  border: none;
+}
+#prev-week:hover {
+  border-radius: 30px;
+  border: 2px solid rgba(164, 72, 93, 1);
 }
 #next-week {
   position: absolute;
   top: 50%;
   left: 975px;
-  border-radius: 30px;
-  border: 3px solid rgba(164, 72, 93, 1);
   background-color: transparent;
-  color: rgba(164, 72, 93, 1);
   cursor: pointer;
   width: 62px;
   height: 42px;
+  border: none;
+}
+#next-week:hover {
+  border-radius: 30px;
+  border: 2px solid rgba(164, 72, 93, 1);
 }
 
 #calendar-table th,
@@ -395,6 +495,18 @@ td button.disabled {
   max-width: 90%;
   box-shadow: 0 5px 15px rgba(164, 72, 93, 0.5);
 }
+.modal_conteiner_masters {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#modal_masters_select {
+  padding: 10px;
+  color: rgba(28, 15, 8, 1);
+  border-radius: 20px;
+  border: 1px solid rgba(164, 72, 93, 0.5);
+  outline: none;
+}
 .close-btn {
   float: right;
   font-size: 1.5em;
@@ -407,10 +519,7 @@ td button.disabled {
   line-height: 50.16px;
   color: rgba(28, 15, 8, 1);
 }
-/* form label {
-  margin-top: 10px;
-  display: block;
-} */
+
 form input,
 form button {
   width: 100%;

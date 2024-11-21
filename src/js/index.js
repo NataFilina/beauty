@@ -1,5 +1,9 @@
 const API_URL = 'https://673c7b8396b8dcd5f3fa3fd7.mockapi.io/beauty';
 
+const bookingCalendarCcontainer = document.querySelector(
+  '.booking_calendar_container'
+);
+const bookingContainerBtns = document.querySelector('.booking_container_btns');
 const calendarTable = document.getElementById('calendar-table');
 const modal = document.getElementById('modal');
 const form = document.getElementById('booking-form');
@@ -8,7 +12,17 @@ const phoneInput = document.getElementById('phone-input');
 const prevWeekBtn = document.getElementById('prev-week');
 const nextWeekBtn = document.getElementById('next-week');
 const modalBtn = document.getElementById('modal_btn');
+const modalMasters = document.getElementById('modal_masters');
 const bookingBtn = document.querySelectorAll('.btn_booking');
+const bookingBtnMasters = document.getElementById('booking_btn_masters');
+const modalMastersSelect = document.getElementById('modal_masters_select');
+const bookingBtnArrS = document.querySelector('.booking_btn_arr_s');
+const bookingBtnArrM = document.querySelector('.booking_btn_arr_m');
+const bookingBtnServices = document.getElementById('booking_btn_services');
+const bookingContainerBtnsTop = document.querySelector(
+  '.booking_container_btns_top'
+);
+const modalPrice = document.getElementById('modal_price');
 
 let currentWeekStart = new Date();
 let bookedSlots = [];
@@ -25,7 +39,7 @@ const timeSlots = [
   '15:00',
   '16:00',
 ];
-const services = ['Манікюр/педикюр', 'Макіяж', 'Брови/Вії'];
+let services = ['Манікюр/педикюр', 'Макіяж', 'Брови/Вії'];
 
 function formatDate(date) {
   return date.toISOString().split('T')[0];
@@ -70,9 +84,20 @@ function openModalBtn() {
 
 function closeModal() {
   modal.classList.remove('active');
+  modalMasters.classList.remove('active');
+  modalPrice.classList.remove('active');
   pendingBooking = null;
   modalBtn.style.display = 'none';
+  bookingBtnArrM.classList.remove('booking_btn_arr_down');
+  bookingBtnArrS.classList.remove('booking_btn_arr_down');
 }
+
+function openModalPrice() {
+  modalPrice.classList.add('active');
+  bookingBtnArrS.classList.add('booking_btn_arr_down');
+}
+bookingBtnServices.addEventListener('click', openModalPrice);
+bookingBtnMasters.addEventListener('click', openModalMasters);
 
 bookingBtn.forEach(button => {
   button.addEventListener('click', openModalBtn);
@@ -83,7 +108,13 @@ document.querySelectorAll('.close-btn').forEach(button => {
 });
 
 window.addEventListener('click', event => {
-  if (event.target === modal || event.target === modalBtn) closeModal();
+  if (
+    event.target === modal ||
+    event.target === modalBtn ||
+    event.target === modalMasters ||
+    event.target === modalPrice
+  )
+    closeModal();
 });
 
 function generateCalendar() {
@@ -157,6 +188,38 @@ function generateCalendar() {
     calendarTable.appendChild(row);
   });
 }
+
+function openModalMasters() {
+  modalMasters.classList.add('active');
+  switch (modalMastersSelect.options[modalMastersSelect.selectedIndex].text) {
+    case 'Анна':
+      services = ['Манікюр/педикюр'];
+      bookingCalendarCcontainer.style.height = '400px';
+      bookingContainerBtns.style.height = '400px';
+      break;
+    case 'Ольга':
+      services = ['Брови/Вії'];
+      bookingCalendarCcontainer.style.height = '290px';
+      bookingContainerBtns.style.height = '290px';
+      break;
+    case 'Марія':
+      services = ['Макіяж'];
+      bookingCalendarCcontainer.style.height = '290px';
+      bookingContainerBtns.style.height = '290px';
+      break;
+    default:
+      services = ['Манікюр/педикюр', 'Макіяж', 'Брови/Вії'];
+      bookingCalendarCcontainer.style.height = '790px';
+      bookingContainerBtns.style.height = '790px';
+      break;
+  }
+  generateCalendar();
+}
+
+modalMastersSelect.addEventListener('change', openModalMasters);
+bookingBtnMasters.addEventListener('click', () => {
+  bookingBtnArrM.classList.add('booking_btn_arr_down');
+});
 
 form.addEventListener('submit', async event => {
   event.preventDefault();
