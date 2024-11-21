@@ -89,7 +89,9 @@ window.addEventListener('click', event => {
 function generateCalendar() {
   const currentDate = new Date();
   const week = generateWeek(currentWeekStart);
-  if (currentWeekStart <= new Date()) {
+  const currentTime = currentDate.toTimeString().slice(0, 5);
+
+  if (currentWeekStart <= currentDate) {
     prevWeekBtn.classList.add('hidden');
   } else {
     prevWeekBtn.classList.remove('hidden');
@@ -127,10 +129,8 @@ function generateCalendar() {
       const key = `${formatDate(date)} ${time}`;
       const cell = document.createElement('td');
 
-      const isPast =
-        date < currentDate ||
-        (date.toDateString() === currentDate.toDateString() &&
-          time <= currentDate.toTimeString().slice(0, 5));
+      const isToday = date.toDateString() === currentDate.toDateString();
+      const isPast = date < currentDate && isToday && time <= currentTime;
 
       if (isPast) {
         cell.classList.add('disabled');
