@@ -1,4 +1,4 @@
-const API_URL = 'https://673c7b8396b8dcd5f3fa3fd7.mockapi.io/beauty';
+const API_URL = 'https://6740f284d0b59228b7f1da45.mockapi.io/beauty';
 
 const bookingCalendarCcontainer = document.querySelector(
   '.booking_calendar_container'
